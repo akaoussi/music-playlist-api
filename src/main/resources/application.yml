@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: music-playlist-api
+  datasource:
+    url: jdbc:h2:mem:music;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  mvc:
+    problemdetails:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+
+music:
+  streaming:
+    base-url: https://stream.musicstream.example/songs/
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
